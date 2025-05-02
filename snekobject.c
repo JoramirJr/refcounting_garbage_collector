@@ -4,7 +4,15 @@
 #include <snekobject.h>
 
 snek_object_t *_new_snek_object() {
-    //?
+    snek_object_t *obj = malloc(sizeof(snek_object_t));
+
+    if(obj == NULL) {
+        return NULL;
+    }
+    
+    obj->refcount = 1;
+    
+    return obj;
 }
 
 snek_object_t *new_snek_array(size_t size) {
@@ -67,7 +75,7 @@ snek_object_t *new_snek_float(float value) {
     return obj;
 }
 
-snek_object_t *new_snek_string(char value) {
+snek_object_t *new_snek_string(char *value) {
     snek_object_t *obj = _new_snek_object();
     if(obj == NULL) {
         return NULL;     
