@@ -10,10 +10,10 @@
   static MunitResult name(const MunitParameter params[], void* data) body
 
 #define munit_test(name, fn) \
-  (MunitTest){ "/" name, fn, NULL, 1, NULL }
+(MunitTest){ "/" name, fn, NULL, NULL, MUNIT_TEST_OPTION_NONE }
 
 #define munit_null_test \
-  { NULL, NULL, NULL, 0, NULL }
+  { NULL, NULL, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL }
 
 #define assert_int(actual, op, expected, msg) \
   do { \

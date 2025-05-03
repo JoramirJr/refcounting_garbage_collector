@@ -5,7 +5,7 @@ project(RefCountingGC C)
 file(GLOB SOME_LIB_SOURCES libs/munit/*.c)
 add_library(munit STATIC ${SOME_LIB_SOURCES})
 
-add_executable(refcounting_gc main.c)
+add_executable(refcounting_gc main.c snekobject.c)
 target_link_libraries(refcounting_gc munit)
 include_directories(libs/munit)
 

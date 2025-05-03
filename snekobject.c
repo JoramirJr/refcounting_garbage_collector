@@ -1,7 +1,11 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include <snekobject.h>
+#include "snekobject.h"
+
+void refcount_inc(snek_object_t *obj) {
+
+}
 
 snek_object_t *_new_snek_object() {
     snek_object_t *obj = malloc(sizeof(snek_object_t));
@@ -91,7 +95,7 @@ snek_object_t *new_snek_string(char *value) {
     strcpy(dst, value);
 
     obj->kind = STRING;
-    obj->data.v_int = dst;
+    obj->data.v_string = dst;
     
     return obj;
 }

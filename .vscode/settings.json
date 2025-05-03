@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "munit_wrappers.h": "c",
+        "snekobject.h": "c"
+    }
+}
