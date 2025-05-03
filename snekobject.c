@@ -4,7 +4,10 @@
 #include "snekobject.h"
 
 void refcount_inc(snek_object_t *obj) {
-
+    if(obj == NULL) {
+        return;  
+    }
+    obj->refcount += 1;
 }
 
 snek_object_t *_new_snek_object() {
